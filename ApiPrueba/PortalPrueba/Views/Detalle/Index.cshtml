@@ -1,0 +1,105 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Detalle";
+}
+<head>
+    <style>
+        @@media (min-width: 576px) {
+            .modal-dialog {
+                max-width: 800px !important;
+                margin: 1.75rem auto;
+            }
+        }
+
+    </style>
+</head>
+<input type="hidden" value="" id="txtIdPerson" />
+<input type="hidden" value="" id="txtFechaIng" />
+<section class="content-header" style="padding-bottom:5px; padding-top:8px">
+    <div class="container-fluid ">
+        <div class="row mb-2 ">
+            <div class="col-lg-12 col-sm-12 col-md-12">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="home">PortalPrueba</a></li>
+                    <li class="breadcrumb-item active">Detalle</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container-fluid text-center">
+    <div class="row">
+        <div class="col">
+            <div class="card card-success">
+                <div class="card-header">
+                    <h3 class="card-title">Detalles</h3>
+                </div>
+                <div class="card-body">
+                    <div class="text-end">
+                        <button class="btn btn-primary" onclick="AddDetalle()"> Agregar </button>
+                    </div>
+                    <br>
+                    <div id="TblDetalle">
+                    </div>
+                </div>
+            </div>
+
+            @*Modal*@
+            <div class="modal" tabindex="-1" id="ModalAddDetalle">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="tutleAdd">Agregar Detalle</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="txtDescripcion" maxlength="200">
+                                        <label for="txtDescripcion">Descripcion</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="txtFechaCreacion" maxlength="200">
+                                        <label for="txtFechaCreacion">FechaCreacion</label>
+                                    </div>
+                                </div>
+                            </div>                           
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control" id="txtFechaVencimiento" maxlength="200">
+                                        <label for="txtFechaVencimiento">FechaVencimiento</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="txtCompletada" maxlength="10">
+                                        <label for="txtCompletada">Completada</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="ClosuModal()">Close</button>
+                            <button type="button" id="btnGrabarModal" class="btn btn-primary" onclick="InserDetalle()">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    var table = $('#TblDetalle').DataTable({
+        responsive: true
+    });
+    new $.fn.dataTable.FixedHeader(table);
+</script>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/DetalleLogica.js"></script>

@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<link rel="stylesheet" href="~/css/Login.css" />
+<div class="form">
+
+    <ul class="tab-group align-content-center">
+        <h1 class="text-center text-white">Prueba</h1>
+    </ul>
+    <div id="login">
+        <h2 class="text-center text-white">Bienvenido!</h2>
+
+        <from>
+
+            <div class="field-wrap">
+                <label>
+                    Email Address<span class="req">*</span>
+                </label>
+                <input id="txt_email1" type="text" />
+            </div>
+
+            <div class="field-wrap">
+                <label>
+                    Password<span class="req">*</span>
+                </label>
+                <input id="txt_password1" type="password" />
+            </div>
+
+            <p class="forgot"><a href="#">Recuperar Contraseña?</a></p>
+
+            <button class="button button-block" onclick="logoneo()">Ingresar</button>
+
+        </from>
+
+    </div>
+
+</div><!-- tab-content -->
+<script src="~/js/LoginLogica.js"></script>

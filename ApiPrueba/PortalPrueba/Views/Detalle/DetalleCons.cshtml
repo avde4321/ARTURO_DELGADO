@@ -1,0 +1,29 @@
+﻿﻿
+@model List<BD.Models.Detalle>
+
+<div class="card">
+    <div class="card-body">
+        <table id="TblDetalle" class="table table-bordered table-striped table-responsive-sm w-100" style="font-size:14px">
+            <thead>
+                <tr>
+                    <th class="text-center">Descripcion</th>
+                    <th class="text-center">FechaCreacion</th>
+                    <th class="text-center">FechaVencimiento</th>
+                    <th class="text-center">Completada</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                      
+                    <tr>
+                        <td class="text-start">@item.Descripcion</td>
+                        <td class="text-start">@item.FechaCreacion</td>
+                        <td class="text-start">@item.FechaVencimiento</td>
+                        <td class="text-start">@item.Completada</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
